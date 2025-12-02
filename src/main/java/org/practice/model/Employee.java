@@ -15,6 +15,10 @@ public class Employee {
         this.jobPosition = jobPosition;
     }
 
+    public void showInfo () {
+        System.out.println("\n");
+    }
+
     public String getNif() {
         return nif;
     }
