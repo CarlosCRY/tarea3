@@ -14,6 +14,7 @@ public class Employee {
         this.surname = surname;
         this.jobPosition = jobPosition;
     }
+    // fuck
 
     public void showInfo () {
         System.out.println("\n");
