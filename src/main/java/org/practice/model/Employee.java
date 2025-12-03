@@ -14,10 +14,34 @@ public class Employee {
         this.surname = surname;
         this.jobPosition = jobPosition;
     }
-    // fuck
 
     public void showInfo () {
-        System.out.println("\n");
+        System.out.print("\n" + surname + ", " + name + " NIF: " + nif + " Posición: ");
+        switch (jobPosition) {
+            case Programmer:
+                System.out.print("Programador.");
+                break;
+
+            case ProjectChief:
+                System.out.print("Jefe de projecto.\n");
+                break;
+
+            case Executive:
+                System.out.print("Ejecutivo.\n");
+                break;
+
+            case Assistant:
+                System.out.print("Asistente.\n");
+                break;
+
+            case Other:
+                System.out.print("No definido.\n");
+                break;
+
+            default:
+                System.out.println("\nERROR DE LECTURA. VALOR DE ENUMARADOR NO ESPERADO\n");
+
+        }
     }
 
     public String getNif() {

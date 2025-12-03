@@ -14,6 +14,13 @@ public class Department {
         this.employees = employees;
     }
 
+    public void showInfo () {
+        System.out.print("\n" + name + ", presupuesto: " + budget + ". Empleados: ");
+        for (Employee employee: employees) {
+            employee.showInfo();
+        }
+    }
+
     public String getName() {
         return name;
     }
