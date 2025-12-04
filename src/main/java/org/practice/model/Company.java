@@ -14,6 +14,50 @@ public class Company {
         this.departments = departments;
     }
 
+    public Department findDepartmentName (String name) {
+        for (Department department: departments) {
+            if (department.getName().equals(name)) {
+                return department;
+            }
+        }
+        return null;
+    }
+
+    // Metodo usado por la opcion 1
+    public void showDepartmentName (String name) {
+        Department target = findDepartmentName(name);
+        if (target != null) {
+            target.showInfoP();
+        } else {
+            System.out.println("\nNo se encuentra el departamento");
+        }
+    }
+
+    // Metodo usado por la opcion 2
+    public void showEmployeesDepName (String name) {
+        Department target = findDepartmentName(name);
+        if (target != null) {
+            target.showEmployeesInfo();
+        } else {
+            System.out.println("\nNo se encuentra el departamento");
+        }
+    }
+
+    // Metodo usado por la opcion 3
+    public void showEmpDepInfo (String name, String nif) {
+        Department empDep = findDepartmentName(name);
+        if (empDep != null) {
+            Employee target = empDep.findEmployeeNif(nif);
+            if (target != null) {
+                target.showInfo();
+            } else {
+                System.out.println("\nNo se encuentra el empleado en el departamento");
+            }
+        } else {
+            System.out.println("\nNo se encuentra el departamento");
+        }
+    }
+
     public String getName() {
         return name;
     }

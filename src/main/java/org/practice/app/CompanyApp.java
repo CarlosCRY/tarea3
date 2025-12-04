@@ -24,21 +24,22 @@ public class CompanyApp {
         int option;
         do {
             System.out.println("\nComandos disponibles:");
-            System.out.print("1. \n2. \n3. \n4. Finalizar aplicación\n");
+            System.out.println("1. Informe de departamento\n2. Informe de empleados");
+            System.out.println("3. Datos del empleado\n4. Finalizar aplicación\n");
             option = scanner.nextInt();
             scanner.nextLine();
 
             switch (option) {
                 case 1:
-
+                    departmentInfo(company);
                     break;
 
                 case 2:
-
+                    employeesInfo(company);
                     break;
 
                 case 3:
-
+                    singleEmployeeInfo(company);
                     break;
 
                 case 4:
@@ -50,8 +51,25 @@ public class CompanyApp {
             }
 
         } while (option != 4);
+    }
 
+    public void departmentInfo (Company company) {
+        System.out.println("\nIntroduzca el nombre del departamento que quiere buscar");
+        company.showDepartmentName(scanner.nextLine());
+    }
 
-        int x = scanner.nextInt();
+    public void employeesInfo (Company company) {
+        System.out.println("\nIntroduzca el nombre del departamento al que pertenezcan los empleados que quiere buscar");
+        company.showEmployeesDepName(scanner.nextLine());
+    }
+
+    public void singleEmployeeInfo (Company company) {
+        System.out.println("\nIntroduzca el nombre del departamento del empleado");
+        String depName = scanner.nextLine();
+
+        System.out.println("\nIntroduzca el NIF del empleado");
+        String empNif = scanner.nextLine();
+
+        company.showEmpDepInfo(depName, empNif);
     }
 }
